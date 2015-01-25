@@ -17,21 +17,24 @@
 		
 		public function HeroPortrait() {
 			var oldcard = AssetUtils.CreateAsset("s_HeroCard");
-			var newcard = AssetUtils.CreateAsset("s_FullDeckCardWithMovie");
-
+			
 			videoContainer = new VideoPanel();
 			videoContainer.visible = true;
-			videoContainer.x = 2 * this.width / 48;
-			videoContainer.y = 4 * this.height / 48;
-			videoContainer.width = 6*this.width /12;
-			videoContainer.height = 6*this.height / 12;
+			videoContainer.x = 0;
+			videoContainer.y = 0;
+			videoContainer.width = 1337;
+			videoContainer.height = 1337;
+			//videoContainer.x = 2 * this.width / 48;
+			//videoContainer.y = 4 * this.height / 48;
+			//videoContainer.width = 6*this.width /12;
+			//videoContainer.height = 6*this.height / 12;
 
 			cardBG = AssetUtils.AdoptAsset(oldcard.card.cardFront.cardBG, this);
 			cardBG.imageHolder.visible = false;
 			cardBG.x = this.x;
 			cardBG.y = this.y;
 			cardBG.width = this.width;
-			cardBG.height = this.height;
+			cardBG.height = 1.1 * this.height;
 			
 			statIcon = AssetUtils.AdoptAsset(oldcard.card.cardFront.statIcon, this);
 			statIcon.visible = true;

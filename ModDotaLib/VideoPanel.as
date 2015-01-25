@@ -17,13 +17,14 @@
 			
 			videoContainer = AssetUtils.AdoptAsset(newcard.selectorBG.portraitVideoContainer, this);
 			videoContainer.visible = true;
-			videoContainer.x = 2 * this.width / 48;
-			videoContainer.y = 4 * this.height / 48;
-			videoContainer.width = 6*this.width /12;
-			videoContainer.height = 6*this.height / 12;
+			videoContainer.x = 512;
+			videoContainer.y = 512;
+			videoContainer.width = 256; //Debug time
+			videoContainer.height = 256;
 		}
 		
 		public function startCardVideo(videoFilename:String) : * {
+		     trace("Starting video: "+videoFilename);
 			 this.cardVideoController.startVideo(0,videoContainer,videoFilename);
 			 videoContainer.mouseEnabled = false;
 			 videoContainer.mouseChildren = false;
