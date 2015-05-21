@@ -172,7 +172,7 @@
 				if (entry_type == 1)
 				{// 'A' record
 					var entry_ans_data_val=(""+entry_data[0]+"."+entry_data[1]+"."+entry_data[2]+"."+entry_data[3]);
-					retval.push(new dota2Net.DNSEntry(entry_ans_name,entry_type,entry_ans_data_val));
+					retval.push(new DNSEntry(entry_ans_name,entry_type,entry_ans_data_val));
 				}
 				//trace("Answer Entry for "+entry_ans_name);
 			}
