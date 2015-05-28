@@ -17,10 +17,10 @@
 			
 			videoContainer = AssetUtils.AdoptAsset(newcard.selectorBG.portraitVideoContainer, this);
 			videoContainer.visible = true;
-			videoContainer.x = 512;
-			videoContainer.y = 512;
-			videoContainer.width = 256; //Debug time
-			videoContainer.height = 256;
+			videoContainer.x = 0;
+			videoContainer.y = 0;
+			videoContainer.width = 512;
+			videoContainer.height = 512;
 		}
 		
 		public function startCardVideo(videoFilename:String) : * {
