@@ -1,4 +1,52 @@
 ﻿package ModDotaLib.Utils {
+	
+		// Hacky stuff
+	import flash.utils.getQualifiedClassName;
+	import flash.utils.getDefinitionByName;
+	
+	import flash.utils.Timer;
+	import flash.display.MovieClip;
+	import flash.events.TimerEvent;
+    import flash.events.MouseEvent;
+	import scaleform.clik.events.ButtonEvent;
+	import scaleform.clik.controls.*;
+	import flash.geom.Point;
+	import scaleform.gfx.DisplayObjectEx;
+	import scaleform.gfx.Extensions;
+	import scaleform.gfx.MouseEventEx;
+	import scaleform.gfx.InteractiveObjectEx;
+	import fl.motion.Color;
+	import flash.text.TextFormat;
+	import scaleform.gfx.TextFieldEx;
+	import flash.text.TextField;
+	import flash.text.TextFormatAlign;
+	import flash.text.TextFieldType;
+	import scaleform.clik.data.DataProvider;
+	import flashx.textLayout.formats.BackgroundColor;
+	import flash.geom.ColorTransform;
+	import scaleform.clik.events.ListEvent;
+	import flash.events.Event;
+	import flash.events.KeyboardEvent;
+	import flash.events.FocusEvent;
+	import flash.ui.Keyboard;
+	import fl.transitions.TweenEvent;
+	import fl.transitions.Tween;
+	import flash.net.URLVariables;
+	import flash.net.URLLoaderDataFormat;
+	import flash.desktop.Clipboard;
+	import flash.desktop.ClipboardFormats;
+	import flash.globalization.DateTimeFormatter;
+	import flash.globalization.LocaleID;
+	import flash.globalization.DateTimeStyle;
+	import flash.text.TextFieldAutoSize;
+	import flash.utils.Dictionary;
+	import flash.display.Loader;
+	import flash.net.URLLoader;
+	import flash.net.URLRequest;
+	import flash.display.DisplayObject;
+	import flash.geom.Rectangle;
+	import flash.display.BitmapData;
+	
 	public class DebugUtils {
 		// Shamelessly stolen from Frota
         public static function strRep(str, count) {

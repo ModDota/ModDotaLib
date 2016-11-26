@@ -1,0 +1,8 @@
+"CustomUI"
+{
+	"1"
+	{
+		"File"	"ModDotaLib"
+		"Depth"	"1"
+	}
+}
