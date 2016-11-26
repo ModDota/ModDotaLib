@@ -86,7 +86,13 @@ function storage:getKey(playerID, filename, key, callback)
     return self.sequenceNumber
 end
 Convars:RegisterCommand("moddota_localstorage_ack", function(cmdname, success, sequenceNumber, pid)
-    print(cmdname .. " " .. success .. " " .. sequenceNumber .. " " .. pid)
+    if tonumber(pid) == 255 then
+        CustomGameEventManager:Send_ServerToPlayer(Convars:GetCommandClient(), "moddota_localstorage_ack", {
+            success = tonumber(success),
+            sequenceNumber = tonumber(sequenceNumber)
+        })
+        return
+    end
     if tonumber(success) ~= SUCCESS then
         print("[ModDotaLib - LocalStorage] Save failed. (" .. sequenceNumber .. ")")
     end
@@ -95,6 +101,14 @@ Convars:RegisterCommand("moddota_localstorage_ack", function(cmdname, success, s
     storage.db[tonumber(sequenceNumber)].callback(tonumber(sequenceNumber), tonumber(success))
 end, "Fuck", 0)
 Convars:RegisterCommand("moddota_localstorage_value", function(cmdname, success, sequenceNumber, pid, value)
+    if tonumber(pid) == 255 then
+        CustomGameEventManager:Send_ServerToPlayer(Convars:GetCommandClient(), "moddota_localstorage_value", {
+            success = tonumber(success),
+            sequenceNumber = tonumber(sequenceNumber),
+            value = value
+        })
+        return
+    end
     if tonumber(success) ~= SUCCESS then
         print("[ModDotaLib - LocalStorage] Load failed.")
         --TODO: Do more detailed analysis of why it fucked up.
