@@ -55,7 +55,7 @@ function storage:setKey(playerID, filename, key, value, callback)
         print("[ModDotaLib - LocalStorage] WARNING: Running LocalStorage in tools mode. Using alternate location to prevent read-only storage for end users")
     end
     FireGameEvent("moddota_localstorage_set", {
-        filename = "scripts/moddota_storage/" ..(IsInToolsMode() and "tools/" or "live/") .. filename .. ".kv",
+        filename = "scripts/" ..(IsInToolsMode() and "tools/" or "") .. filename .. ".kv",
         key = key,
         value = value,
         sequenceNumber = self.sequenceNumber,
@@ -74,7 +74,7 @@ function storage:getKey(playerID, filename, key, callback)
     end
     self.sequenceNumber = self.sequenceNumber + 1
     FireGameEvent("moddota_localstorage_get", {
-        filename = "scripts/moddota_storage/" .. (IsInToolsMode() and "tools/" or "live/") .. filename .. ".kv",
+        filename = "scripts/" .. (IsInToolsMode() and "tools/" or "") .. filename .. ".kv",
         key = key,
         sequenceNumber = self.sequenceNumber,
         pid = playerID

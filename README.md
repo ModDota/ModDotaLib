@@ -13,9 +13,11 @@ A Flash, Lua and optionally Panorama Library to give gamemodes the ability to ha
 
 4. in `addon_game_mode.lua` add `local storage = require("ModDotaLib.LocalStorage")`, and anywhere else in server-side Lua that wants access to client key/values.
 
-5. (Optional) Drag and drop the `assets/panorama/scripts/ModDota` folder to `content/panorama/scripts/`
+5. Create the folder `tools` in `scripts/` for this to work in tools mode. This is to protect you from accidently shipping data to the end user via a VPK, which will override any read you attempt to do.
 
-6. (Optional) Merge `assets/panorama/layout/custom_game/custom_ui_manifest.xml` with your existing `custom_ui_manifest.xml` (adding our JS to your scripts tag **BEFORE** any of your existing code that relies on LocalStorage)
+6. (Optional) Drag and drop the `assets/panorama/scripts/ModDota` folder to `content/panorama/scripts/`
+
+7. (Optional) Merge `assets/panorama/layout/custom_game/custom_ui_manifest.xml` with your existing `custom_ui_manifest.xml` (adding our JS to your scripts tag **BEFORE** any of your existing code that relies on LocalStorage)
 
 ### Examples
 Lua Example is available at [addon_game_mode.lua](https://github.com/ModDota/ModDotaLib/blob/master/assets/scripts/vscripts/addon_game_mode.lua)

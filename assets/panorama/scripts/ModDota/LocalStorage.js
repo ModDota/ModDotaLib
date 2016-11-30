@@ -19,7 +19,7 @@ function SetKey(filename, key, value, callback) {
         $.Msg("[ModDotaLib - LocalStorage] WARNING: Running LocalStorage in tools mode. Using alternate location to prevent read-only storage for end users");
     }
     GameEvents.SendEventClientSide("moddota_localstorage_set", {
-        "filename" : "scripts/moddota_storage/" +(Game.IsInToolsMode() ? "tools/" : "live/") + filename + ".kv",
+        "filename" : "scripts/" +(Game.IsInToolsMode() ? "tools/" : "") + filename + ".kv",
         "key" : key,
         "value" : value,
         "sequenceNumber" : ++sequenceNumber,
@@ -33,7 +33,7 @@ function GetKey(filename, key, callback) {
         $.Msg("[ModDotaLib - LocalStorage] WARNING: Running LocalStorage in tools mode. Using alternate location to prevent read-only storage for end users");
     }
     GameEvents.SendEventClientSide("moddota_localstorage_get", {
-        "filename" : "scripts/moddota_storage/" +(Game.IsInToolsMode() ? "tools/" : "live/") + filename + ".kv",
+        "filename" : "scripts/" +(Game.IsInToolsMode() ? "tools/" : "") + filename + ".kv",
         "key" : key,
         "sequenceNumber" : ++sequenceNumber,
         "pid" : 255 //This tells Lua later to just redirect it back to us.
